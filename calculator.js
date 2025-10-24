@@ -44,10 +44,21 @@ function divide(a, b) {
     return a / b;
 }
 
+/**
+ * Returns the remainder of division (modulus)
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} The remainder of a % b
+ */
+function modulus(a, b) {
+    return a % b;
+}
+
 // Export functions for use in other modules
 module.exports = {
     add,
     subtract,
     multiply,
-    divide
+    divide,
+    modulus
 };

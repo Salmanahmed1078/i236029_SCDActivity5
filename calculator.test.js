@@ -1,6 +1,6 @@
 // Test file for calculator functions using Jest
 
-const { add, subtract, multiply, divide } = require('./calculator');
+const { add, subtract, multiply, divide, modulus } = require('./calculator');
 
 describe('Calculator Functions', () => {
     
@@ -93,6 +93,28 @@ describe('Calculator Functions', () => {
 
         test('should handle division resulting in decimal', () => {
             expect(divide(7, 3)).toBeCloseTo(2.333333);
+        });
+    });
+
+    describe('modulus function', () => {
+        test('should return correct remainder for positive numbers', () => {
+            expect(modulus(10, 3)).toBe(1);
+        });
+
+        test('should return correct remainder for negative numbers', () => {
+            expect(modulus(-10, 3)).toBe(-1);
+        });
+
+        test('should return zero when numbers divide evenly', () => {
+            expect(modulus(12, 4)).toBe(0);
+        });
+
+        test('should handle modulus with decimal numbers', () => {
+            expect(modulus(7.5, 2.5)).toBeCloseTo(0);
+        });
+
+        test('should handle modulus with zero remainder', () => {
+            expect(modulus(15, 5)).toBe(0);
         });
     });
 });
